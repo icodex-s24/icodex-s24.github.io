@@ -1,0 +1,295 @@
+<!doctype html><html lang="en" data-mode="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7" /><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e" /><meta name="apple-mobile-web-app-capable" content="yes" /><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /><meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover" /><meta name="generator" content="Jekyll v4.4.1" /><meta property="og:title" content="The Swift5.1 features that power SwiftUI’s API" /><meta property="og:locale" content="en" /><meta name="description" content="The introduction of SwiftUI, Apple’s declarative new UI framework, was clearly one of the most impactful announcements made during this year’s WWDC conference. As a brand new way of building UIs for all of Apple’s platforms, using a coding style that’s vastly different from the way UIKit works, SwiftUI isn’t just a new framework - it’s paradigm shift." /><meta property="og:description" content="The introduction of SwiftUI, Apple’s declarative new UI framework, was clearly one of the most impactful announcements made during this year’s WWDC conference. As a brand new way of building UIs for all of Apple’s platforms, using a coding style that’s vastly different from the way UIKit works, SwiftUI isn’t just a new framework - it’s paradigm shift." /><link rel="canonical" href="/posts/swift5.1-features-power-swiftui-api/" /><meta property="og:url" content="/posts/swift5.1-features-power-swiftui-api/" /><meta property="og:site_name" content="iCodeX’s blog" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2019-03-06T17:02:00-05:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="The Swift5.1 features that power SwiftUI’s API" /><meta name="twitter:site" content="@icodex-s24" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-03-06T17:02:00-05:00","datePublished":"2019-03-06T17:02:00-05:00","description":"The introduction of SwiftUI, Apple’s declarative new UI framework, was clearly one of the most impactful announcements made during this year’s WWDC conference. As a brand new way of building UIs for all of Apple’s platforms, using a coding style that’s vastly different from the way UIKit works, SwiftUI isn’t just a new framework - it’s paradigm shift.","headline":"The Swift5.1 features that power SwiftUI’s API","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/swift5.1-features-power-swiftui-api/"},"url":"/posts/swift5.1-features-power-swiftui-api/"}</script><title>The Swift5.1 features that power SwiftUI's API | iCodeX's blog</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="iCodeX's blog"><meta name="application-name" content="iCodeX's blog"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css" /><link rel="stylesheet" href="/assets/lib/fonts/main.css" /><link rel="stylesheet" href="/assets/lib/fontawesome-free/css/all.min.css" /><link rel="stylesheet" href="/assets/lib/tocbot/tocbot.min.css" /><link rel="stylesheet" href="/assets/lib/loading-attribute-polyfill/loading-attribute-polyfill.min.css" /><link rel="stylesheet" href="/assets/lib/glightbox/glightbox.min.css" /><body><aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end"><header class="profile-wrapper"> <a href="/" id="avatar" class="rounded-circle"><img src="/assets/img/logo.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a><h1 class="site-title"> <a href="/">iCodeX's blog</a></h1><p class="site-subtitle fst-italic mb-0">Code. Learn. Write. Repeat</p></header><nav class="flex-column flex-grow-1 w-100 ps-0"><ul class="nav"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tags"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle"></i> <span>ABOUT</span> </a></ul></nav><div class="sidebar-bottom d-flex flex-wrap align-items-center w-100"> <a href="https://github.com/icodex-s24" aria-label="github" target="_blank" rel="noopener noreferrer" > <i class="fab fa-github"></i> </a> <a href="https://twitter.com/icodex-s24" aria-label="twitter" target="_blank" rel="noopener noreferrer" > <i class="fa-brands fa-x-twitter"></i> </a> <a href="javascript:location.href = 'mailto:' + ['j.doit926','gmail.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></aside><div id="main-wrapper" class="d-flex justify-content-center"><div class="container d-flex flex-column px-xxl-5"><header id="topbar-wrapper" aria-label="Top Bar"><div id="topbar" class="d-flex align-items-center justify-content-between px-lg-3 h-100" ><nav id="breadcrumb" aria-label="Breadcrumb"> <span> <a href="/">Home</a> </span> <span>The Swift5.1 features that power SwiftUI's API</span></nav><button type="button" id="sidebar-trigger" class="btn btn-link"> <i class="fas fa-bars fa-fw"></i> </button><div id="topbar-title"> Post</div><button type="button" id="search-trigger" class="btn btn-link"> <i class="fas fa-search fa-fw"></i> </button> <search id="search" class="align-items-center ms-3 ms-lg-0"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..." > </search> <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">Cancel</button></div></header><div class="row flex-grow-1"><main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4"><article class="px-1"><header><h1 data-toc-skip>The Swift5.1 features that power SwiftUI's API</h1><div class="post-meta text-muted"> <span> Posted <time data-ts="1551909720" data-df="ll" data-bs-toggle="tooltip" data-bs-placement="bottom" > Mar 6, 2019 </time> </span><div class="d-flex justify-content-between"> <span> By <em> <a href="https://twitter.com/icodex-s24">icodex-s24</a> </em> </span><div> <span class="readtime" data-bs-toggle="tooltip" data-bs-placement="bottom" title="2174 words" > <em>12 min</em> read</span></div></div></div></header><div class="content"><p>The introduction of SwiftUI, Apple’s declarative new UI framework, was clearly one of the most impactful announcements made during this year’s WWDC conference. As a brand new way of building UIs for all of Apple’s platforms, using a coding style that’s vastly different from the way UIKit works, SwiftUI isn’t just a new framework - it’s paradigm shift.</p><p>As a new, modern task on UI development for Apple’s platforms, SwiftUI also pushes the Swift language itself to new limits - by making heavy use of a set of key new syntax features, that are being introduced as part of Swift5.1, in order to provide a very <em>DSL-like</em> API. (Domain Specific Language)</p><p>Let’s take a look at those features, and how learning more about them - and how they work - can let us again a more thorough understanding of SwiftUI’s API and how it was built. While this won’t be an introduction to SwiftUI per se, it’ll hopefully serve as a bit of a peek under the hood of Apple’s exciting new UI framework.</p><h2 id="opaque-return-types"><span class="me-2">Opaque return types</span><a href="#opaque-return-types" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>One feature that sort of stands out when looking at most of the SwiftUI sample code that has been shared so far, is the new <code class="language-plaintext highlighter-rouge">some</code> keyword. Introduced through Swift Evolution proposal <code class="language-plaintext highlighter-rouge">SE-0244</code> - this new keyword enables functions, subscripts, and computed properties to declare <em>opaque return types</em>.</p><p>What that means, is that even generic protocols(a protocol that either has associated types or references to <code class="language-plaintext highlighter-rouge">Self</code>) can now be used as return types - just as if they were concrete types - like no-generic protocols, classes or structs. When using SwiftUI, <code class="language-plaintext highlighter-rouge">some</code> is very often used when declaring a view’s <code class="language-plaintext highlighter-rouge">body</code> - like this:</p><div class="language-swift highlighter-rouge"><div class="code-header"> <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">Text</span><span class="p">(</span><span class="s">"Hello, world!"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>The <code class="language-plaintext highlighter-rouge">View</code> protocol is used to define SwiftUI view descriptions, and in order to enable each view to decide what type to use for its <code class="language-plaintext highlighter-rouge">body</code> property - that property requirement is defined using an associated <code class="language-plaintext highlighter-rouge">Body</code> type. Prior to Swift5.1, attempting to reference such a protocol(without the <code class="language-plaintext highlighter-rouge">some</code> keyword), would lead to a compile error saying that <code class="language-plaintext highlighter-rouge">View</code> can only be used as a generic constraint. To work around that, we’d then have to specify a concrete type confirming to <code class="language-plaintext highlighter-rouge">View</code> instead - for example like this:</p><div class="language-swift highlighter-rouge"><div class="code-header"> <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">Text</span> <span class="p">{</span>
+        <span class="kt">Text</span><span class="p">(</span><span class="s">"Hello, world!"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>Another option would be to use <em>type erasure</em>, and require each <code class="language-plaintext highlighter-rouge">View</code> implementation to be boxed into a type-erased <code class="language-plaintext highlighter-rouge">AnyView</code> instance before being returned:</p><div class="language-swift highlighter-rouge"><div class="code-header"> <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">AnyView</span> <span class="p">{</span>
+        <span class="kt">AnyView</span><span class="p">(</span><span class="kt">Text</span><span class="p">(</span><span class="s">"Hello, word!"</span><span class="p">))</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>But now, by using the <code class="language-plaintext highlighter-rouge">some</code> keyword, we’re free to return <em>any value</em> confirming to the specific protocol(like <code class="language-plaintext highlighter-rouge">View</code>, in the case of SwiftUI) - and any other code that calls into our implementation can still use all of the properties and methods from that protocol when working with our return value - without requiring us to use wrapper types (like <code class="language-plaintext highlighter-rouge">AnyView</code>), or to break our code’s encapsulation by exposing concrete types as part our API.</p><p>A nice side-effect of this new keyword is the additional flexibility it gives us, since we no longer have to modify our public API in order to change what exact return type that’s used under the hood. That’s especially important for a view framework, like SwiftUI - since a kye part of writing maintainable view code is to constantly refactor and split up the various parts of a UI into separate, smaller building blocks.</p><h2 id="omitted-return-keywords"><span class="me-2">Omitted return keywords</span><a href="#omitted-return-keywords" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Perhaps not as important as the new <code class="language-plaintext highlighter-rouge">some</code> keyword, but a nice implementation in terms of consistency, and a big factor when it comes to how lightweight SwiftUI’s API feels - is the fact that the <code class="language-plaintext highlighter-rouge">return</code> keyword can now be omitted for single-expression functions.</p><p>Swift Evolution proposal <code class="language-plaintext highlighter-rouge">SE-0255</code> made functions and computed properties act the same way as closures - in that if there’s only one expression within them, using the <code class="language-plaintext highlighter-rouge">return</code> keyword is no longer required - making the following two implementations act the exact same way:</p><div class="language-swift highlighter-rouge"><div class="code-header"> <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="c1">// Using an explicit return keyword</span>
+        <span class="k">return</span> <span class="kt">Text</span><span class="p">(</span><span class="s">"Hello, world!"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="c1">// Omitting the return keyword, just like within a closure</span>
+        <span class="kt">Text</span><span class="p">(</span><span class="s">"Hello, world!"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>While the above might take a while to get used to, it does server as a way to make single expressions within functions and computed properties a bit more clean - for example in things like factory methods:</p><div class="language-swift highlighter-rouge"><div class="code-header"> <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">makeProfileViewController</span><span class="p">(</span><span class="k">for</span> <span class="nv">user</span><span class="p">:</span> <span class="kt">User</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="kt">ProfileViewController</span><span class="p">(</span>
+        <span class="nv">logicController</span><span class="p">:</span> <span class="kt">ProfileLogicController</span><span class="p">(</span>
+            <span class="nv">user</span><span class="p">:</span> <span class="n">user</span><span class="p">,</span>
+            <span class="nv">networking</span><span class="p">:</span> <span class="n">networking</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>However, the compiler will continue to accept code that uses the <code class="language-plaintext highlighter-rouge">return</code> keyword, as well as code that omits it - so each developer is free to choose whichever style that they prefer.</p><h2 id="function-builders"><span class="me-2">Function builders</span><a href="#function-builders" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>With both the <code class="language-plaintext highlighter-rouge">some</code> keyword and omitted returns, we now have an answer as to how SwiftUI’s top-level <code class="language-plaintext highlighter-rouge">View</code> declaration API is made possible - but so far we still don’t have an explanation for how multiple views can be grouped together, without any sort of keyword or additional syntax - like this:</p><div class="language-swift highlighter-rouge"><div class="code-header"> <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">HeaderView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span>
+    <span class="k">let</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">subtitle</span><span class="p">:</span> <span class="kt">String</span>
+
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">VStack</span> <span class="p">{</span>
+            <span class="c1">// Here three separate expressions are evaluated,</span>
+            <span class="c1">// without any return keyword or additional syntax.</span>
+            <span class="kt">Image</span><span class="p">(</span><span class="nv">uiImage</span><span class="p">:</span> <span class="n">image</span><span class="p">)</span>
+            <span class="kt">Text</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+            <span class="kt">Text</span><span class="p">(</span><span class="n">subtitle</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>SwiftUI’s grouping views - such as <code class="language-plaintext highlighter-rouge">VStack</code>, <code class="language-plaintext highlighter-rouge">HStack</code>, and <code class="language-plaintext highlighter-rouge">Group</code> - enable multiple views to be grouped together by simply creating new instances within a closure. Since there are closures with multiple expressions, it means that we’re not dealing with an omitted <code class="language-plaintext highlighter-rouge">return</code> keyword here - so how exactly is that kind of syntax made possible?</p><p>The answer, is <em>function builders</em> - which is such a new feature that, at the time of writing, it doesn’t even have a formal proposal yet. An initial draft for a proposal can be found here, but interestingly this feature has already been implemented in the Swift compiler.</p><p>Function builders enables the <em>builder pattern</em> to be implemented using closures - providing a very <em>DSL-like</em> development experience, by passing the expressions defined within such a closure to a dedicated builder type.</p><p>Without the new function builder feature, we’d have to manually create a builder in order to construct instances of containers like <code class="language-plaintext highlighter-rouge">VStack</code>, giving us code that’s look something like this:</p><div class="language-swift highlighter-rouge"><div class="code-header"> <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">HeaderView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span>
+    <span class="k">let</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">subtitle</span><span class="p">:</span> <span class="kt">String</span>
+
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">builder</span> <span class="o">=</span> <span class="kt">VStackBuilder</span><span class="p">()</span>
+        <span class="n">builder</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="kt">Image</span><span class="p">(</span><span class="nv">uiImage</span><span class="p">:</span> <span class="n">image</span><span class="p">))</span>
+        <span class="n">builder</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="kt">Text</span><span class="p">(</span><span class="n">title</span><span class="p">))</span>
+        <span class="n">builder</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="kt">Text</span><span class="p">(</span><span class="n">subtitle</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">builder</span><span class="o">.</span><span class="nf">build</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><blockquote><p>The above definition isn’t bad, but it does make the API feel much less lightweight.</p></blockquote><p>So how do function builders work? It all starts with the new <code class="language-plaintext highlighter-rouge">@functionBuilder</code> attribute (or <code class="language-plaintext highlighter-rouge">@_functionBuilder</code>, as it’s currently implemented as, since this feature is still considered a private implementation detail) - which marks a given type as being a builder.</p><p>Similar to how new <em>custom string literal API</em> works, a builder then declares different overloads of the <code class="language-plaintext highlighter-rouge">buildBlock</code> method in order to provide support for closures containing various kinds of expressions. For example, here is “paraphrased” implementation of what SwiftUI’s own <code class="language-plaintext highlighter-rouge">ViewBuilder</code> type might look like:</p><div class="language-swift highlighter-rouge"><div class="code-header"> <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre><td class="rouge-code"><pre><span class="kd">@functionBuilder</span>
+<span class="kd">struct</span> <span class="kt">ViewBuilder</span> <span class="p">{</span>
+    <span class="c1">// Build a value from an empty closure, resulting in an</span>
+    <span class="c1">// empty view in this case:</span>
+    <span class="kd">static</span> <span class="kd">func</span> <span class="nf">buildBlock</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">EmptyView</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">EmptyView</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Build a sing view from a closure that contains a single view expression:</span>
+    <span class="kd">static</span> <span class="kd">func</span> <span class="n">buildBlock</span><span class="o">&lt;</span><span class="kt">V</span><span class="p">:</span> <span class="kt">View</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">V</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">view</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Build a combining TupleView from a closure that contains two view expressions:</span>
+    <span class="kd">static</span> <span class="kd">func</span> <span class="n">buildBlock</span><span class="o">&lt;</span><span class="kt">A</span><span class="p">:</span> <span class="kt">View</span><span class="p">,</span> <span class="kt">B</span><span class="p">:</span> <span class="kt">View</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">viewA</span><span class="p">:</span> <span class="kt">A</span><span class="p">,</span> <span class="nv">_viewB</span><span class="p">:</span> <span class="kt">B</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">TupleView</span><span class="p">((</span><span class="n">viewA</span><span class="p">,</span> <span class="n">viewB</span><span class="p">))</span>
+    <span class="p">}</span>
+
+    <span class="c1">// An so on, and so forth</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>Note how each closure variant needs to be explicitly handled by the builder above, since we might be dealing with different kinds of <code class="language-plaintext highlighter-rouge">View</code> implementations defined within the same closure. If that wasn’t the case, <code class="language-plaintext highlighter-rouge">ViewBuilder</code> could’ve instead used a variadic parameter to handle closures containing multiple expressions - like this:</p><div class="language-swift highlighter-rouge"><div class="code-header"> <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="kd">@functionBuilder</span>
+<span class="kd">struct</span> <span class="kt">ViewBuilder</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="kd">func</span> <span class="nf">buildBlock</span><span class="p">(</span><span class="n">_</span> <span class="nv">views</span><span class="p">:</span> <span class="kt">View</span><span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CombinedView</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">CombinedView</span><span class="p">(</span><span class="nv">views</span><span class="p">:</span> <span class="n">views</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><blockquote><p>The above code is just an example, it won’t even compile, since <code class="language-plaintext highlighter-rouge">View</code> has an associated type.</p></blockquote><p>With the above <code class="language-plaintext highlighter-rouge">VieBuilder</code> type in place, the compiler will now synthesize an attribute that matches its name (<code class="language-plaintext highlighter-rouge">@ViewBuilder</code>) - which we can then use to mark all the closure parameters that we wish to use our new builder with, like this:</p><div class="language-swift highlighter-rouge"><div class="code-header"> <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">VStack</span><span class="o">&lt;</span><span class="kt">Content</span><span class="p">:</span> <span class="kt">View</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="nf">init</span><span class="p">(</span><span class="kd">@ViewBuilder</span> <span class="nv">builder</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Content</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// A function builder closure can be called just like any other, </span>
+        <span class="c1">// and the resulting expression can then be used to, </span>
+        <span class="c1">// for instance, construct a container view.</span>
+        <span class="k">let</span> <span class="nv">content</span> <span class="o">=</span> <span class="nf">builder</span><span class="p">()</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>Using the above two pieces - a function builder type, and closures marked as users of that type, building really lightweight DSLs now becomes possible - which is exactly what Apple has done to achieve SwiftUI’s view building syntax:</p><div class="language-swift highlighter-rouge"><div class="code-header"> <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="kt">VStack</span> <span class="p">{</span>
+    <span class="kt">Image</span><span class="p">(</span><span class="nv">uiImage</span><span class="p">:</span> <span class="n">image</span><span class="p">)</span>
+    <span class="kt">Text</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="kt">Text</span><span class="p">(</span><span class="n">subtitle</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>As a feature, function builders definitely lean towards the advanced end of the spectrum - but the beauty of them is that developers using DSL-based frameworks, like SwiftUI, should ideally never even notice them - since the whole builder part simply becomes an implementation detail of the DSL itself.</p><h2 id="property-wrappers"><span class="me-2">Property wrappers</span><a href="#property-wrappers" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>The final core new Swift5.1 feature that SwiftUI’s API is powered by is <em>property wrappers</em> (formally known as <em>“property delegates”</em>). Introduced as part of proposal <code class="language-plaintext highlighter-rouge">SE-0258</code>, this new feature enables property values to be automatically wrapped using specific types. It works quite similarly to function builders in that regard - in that implementing property wrappers requires both a custom attribute, and a type that handles that attribute.</p><p>SwiftUI uses property wrappers to make it much easier to define various kinds of <em>bindable</em> properties. For example, in order to define a property for managing a part of a view’s state, the <code class="language-plaintext highlighter-rouge">@State</code> attribute can be used to automatically wrap such a property’s value in an instance of the bindable <code class="language-plaintext highlighter-rouge">State</code> type:</p><div class="language-swift highlighter-rouge"><div class="code-header"> <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">SettingView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">@State</span> <span class="k">var</span> <span class="nv">saveHistory</span><span class="p">:</span> <span class="kt">Bool</span>
+    <span class="kd">@State</span> <span class="k">var</span> <span class="nv">enableAutofill</span><span class="p">:</span> <span class="kt">Bool</span>
+
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">VStack</span> <span class="p">{</span>
+            <span class="c1">// We can now access bindable versions of our state</span>
+            <span class="c1">// properties by prefixing their name with '$':</span>
+            <span class="kt">Toggle</span><span class="p">(</span><span class="nv">isOn</span><span class="p">:</span> <span class="n">$saveHistory</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="s">"Save browsing history"</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="kt">Toggle</span><span class="p">(</span><span class="nv">isOn</span><span class="p">:</span> <span class="n">$enableAutofill</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="s">"Autofill my information"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>Since all that property wrappers really do is to act as a sort of interface between a property value and an underlying storage type, the above code sample is essentially equivalent to this next implementation - which does the exact same thing, but by using the underlying <code class="language-plaintext highlighter-rouge">State</code> struct directly instead:</p><div class="language-swift highlighter-rouge"><div class="code-header"> <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">SettingsView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">saveHistory</span><span class="p">:</span> <span class="kt">State</span><span class="o">&lt;</span><span class="kt">Bool</span><span class="o">&gt;</span>
+    <span class="k">var</span> <span class="nv">enableAutofill</span><span class="p">:</span> <span class="kt">State</span><span class="o">&lt;</span><span class="kt">Bool</span><span class="o">&gt;</span>
+
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">VStack</span> <span class="p">{</span>
+            <span class="kt">Toggle</span><span class="p">(</span><span class="nv">isOn</span><span class="p">:</span> <span class="n">saveHistory</span><span class="o">.</span><span class="n">binding</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="s">"Save browsing history"</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="kt">Toggle</span><span class="p">(</span><span class="nv">isOn</span><span class="p">:</span> <span class="n">enableAutofill</span><span class="o">.</span><span class="n">binding</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="s">"Autofill my information"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>Again, the design of property wrappers is very similar to that of function builders, in that delegation attributes (such as <code class="language-plaintext highlighter-rouge">@State</code>) gets mapped to their corresponding underlying type using the <code class="language-plaintext highlighter-rouge">@propertyWrapper</code> attribute. For example, here’s a simplified version of what the public API of SwiftUI’s <code class="language-plaintext highlighter-rouge">State</code> struct looks like:</p><div class="language-swift highlighter-rouge"><div class="code-header"> <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre><span class="kd">@propertyWrapper</span>
+<span class="kd">struct</span> <span class="kt">State</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="nf">init</span><span class="p">(</span><span class="nv">initialValue</span><span class="p">:</span> <span class="kt">Value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">wrappedValue</span><span class="p">:</span> <span class="kt">Value</span> <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+        <span class="k">set</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>What’s particularly exciting about property wrappers, is that they open up opportunities for a lot of different kinds of boilerplate to be eliminated, even in our own code as well. For example, we could define a <code class="language-plaintext highlighter-rouge">@Transformed</code> attribute that lets us automatically apply transformations to various values, or a <code class="language-plaintext highlighter-rouge">@Database</code> attribute for automatically syncing property values to an underlying database - there’s a ton of different possibilities here.</p><h2 id="conclusion"><span class="me-2">Conclusion</span><a href="#conclusion" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>SwiftUI doesn’t only bring a new way of building UIs for Apple’s platform, and brand new Swift coding styles - it has also most likely been the driving factor behind many of new features that are being introduced in Swift5.1 - which makes the language more powerful for everyone, even those who are not yet adopting SwiftUI itself.</p><p>Thanks for reading!</p></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw me-1"></i> <a href="/categories/swiftui/">SwiftUI</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw me-1"></i> <a href="/tags/swiftui/" class="post-tag no-text-decoration" >swiftui</a> <a href="/tags/language-features/" class="post-tag no-text-decoration" >language features</a> <a href="/tags/swift5-1/" class="post-tag no-text-decoration" >swift5.1</a></div><div class=" post-tail-bottom d-flex justify-content-between align-items-center mt-5 pb-2 " ><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper d-flex align-items-center"> <span class="share-label text-muted">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=The%20Swift5.1%20features%20that%20power%20SwiftUI's%20API%20-%20iCodeX's%20blog&url=%2Fposts%2Fswift5.1-features-power-swiftui-api%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter"> <i class="fa-fw fa-brands fa-square-x-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=The%20Swift5.1%20features%20that%20power%20SwiftUI's%20API%20-%20iCodeX's%20blog&u=%2Fposts%2Fswift5.1-features-power-swiftui-api%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://t.me/share/url?url=%2Fposts%2Fswift5.1-features-power-swiftui-api%2F&text=The%20Swift5.1%20features%20that%20power%20SwiftUI's%20API%20-%20iCodeX's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <button id="copy-link" aria-label="Copy link" class="btn small" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy link" data-title-succeed="Link copied successfully!" > <i class="fa-fw fas fa-link pe-none fs-6"></i> </button> </span></div></div></div></article></main><aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted"><div class="access"><section id="access-lastmod"><h2 class="panel-heading">Recently Updated</h2><ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2"><li class="text-truncate lh-lg"> <a href="/posts/conditioning-habits/">Conditioning Habits - The Key to Lasting Change</a><li class="text-truncate lh-lg"> <a href="/posts/cover-6mn-study-in-3days/">Cramming Effectively - How to Cover 6 Months of Study in 72 Hours</a><li class="text-truncate lh-lg"> <a href="/posts/comparison-human-brain-supercomputer/">Human Brain vs. Supercomputer - A Hardware Perspective</a><li class="text-truncate lh-lg"> <a href="/posts/power-detachment/">The Power of Detachment - A Key to Better Decision-Making and Leadership</a><li class="text-truncate lh-lg"> <a href="/posts/how-use-docker-windows-offline/">Building a Docker Environment Completely Offline on Windows 10</a></ul></section><section><h2 class="panel-heading">Trending Tags</h2><div class="d-flex flex-wrap mt-3 mb-1 me-3"> <a class="post-tag btn btn-outline-primary" href="/tags/basics/">basics</a> <a class="post-tag btn btn-outline-primary" href="/tags/llm/">llm</a> <a class="post-tag btn btn-outline-primary" href="/tags/ai/">ai</a> <a class="post-tag btn btn-outline-primary" href="/tags/swiftui/">swiftui</a> <a class="post-tag btn btn-outline-primary" href="/tags/architecture/">architecture</a> <a class="post-tag btn btn-outline-primary" href="/tags/learning/">learning</a> <a class="post-tag btn btn-outline-primary" href="/tags/habits/">habits</a> <a class="post-tag btn btn-outline-primary" href="/tags/strategy/">strategy</a> <a class="post-tag btn btn-outline-primary" href="/tags/swift5-0/">swift5.0</a> <a class="post-tag btn btn-outline-primary" href="/tags/swift5-1/">swift5.1</a></div></section></div><section id="toc-wrapper" class="d-none ps-0 pe-4"><h2 class="panel-heading ps-3 mb-2">Contents</h2><nav id="toc"></nav></section></aside></div><div class="row"><div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4"><aside id="related-posts" aria-labelledby="related-label"><h3 class="mb-4" id="related-label">Further Reading</h3><nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4"><article class="col"> <a href="/posts/swiftui-playground/" class="post-preview card h-100"><div class="card-body"> <time data-ts="1552514520" data-df="ll" > Mar 13, 2019 </time><h4 class="pt-0 my-2">Using SwiftUI in a playground</h4><div class="text-muted"><p>You can totally start learning and experimenting with SwiftUI in an Xcode playground. Just import PlaygroundSupport, and assign a UIHostingController as your live view: 1 2 3 4 5 6 7 8 9 10 11 imp...</p></div></div></a></article><article class="col"> <a href="/posts/swiftui-stacking-views/" class="post-preview card h-100"><div class="card-body"> <time data-ts="1546804920" data-df="ll" > Jan 6, 2019 </time><h4 class="pt-0 my-2">Stacking views in SwiftUI</h4><div class="text-muted"><p>SwiftUI ships with 3 main stack types - that enables you to easily align content on either the X, Y, or Z axis. And, since all SwiftUI views are composable, they can also be nested in order to buil...</p></div></div></a></article><article class="col"> <a href="/posts/swiftui-game-changer/" class="post-preview card h-100"><div class="card-body"> <time data-ts="1546639320" data-df="ll" > Jan 4, 2019 </time><h4 class="pt-0 my-2">SwiftUI is a game changer</h4><div class="text-muted"><p>There is no doubt in my mind that SwiftUI is a complete game changer. This is all the code you need to define a UI that has: A navigation controller A table view Cell configuration Label f...</p></div></div></a></article></nav></aside><nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation"> <a href="/posts/no-such-thing-as-miracle-feynman/" class="btn btn-outline-primary" aria-label="Older" ><p>Self-improvement, No such thing as Miracle</p></a> <a href="/posts/five-steps-ace-your-exam/" class="btn btn-outline-primary" aria-label="Newer" ><p>Five Steps to Ace Your Exam</p></a></nav><footer aria-label="Site Info" class=" d-flex flex-column justify-content-center text-muted flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3 " ><p>© <time>2025</time> <a href="https://twitter.com/icodex-s24">icodex-s24</a>. <span data-bs-toggle="tooltip" data-bs-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." >Some rights reserved.</span></p><p>Using the <a data-bs-toggle="tooltip" data-bs-placement="top" title="v7.1.0" href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener" >Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.</p></footer></div></div><div id="search-result-wrapper" class="d-flex justify-content-center d-none"><div class="col-11 content"><div id="search-hints"><section><h2 class="panel-heading">Trending Tags</h2><div class="d-flex flex-wrap mt-3 mb-1 me-3"> <a class="post-tag btn btn-outline-primary" href="/tags/basics/">basics</a> <a class="post-tag btn btn-outline-primary" href="/tags/llm/">llm</a> <a class="post-tag btn btn-outline-primary" href="/tags/ai/">ai</a> <a class="post-tag btn btn-outline-primary" href="/tags/swiftui/">swiftui</a> <a class="post-tag btn btn-outline-primary" href="/tags/architecture/">architecture</a> <a class="post-tag btn btn-outline-primary" href="/tags/learning/">learning</a> <a class="post-tag btn btn-outline-primary" href="/tags/habits/">habits</a> <a class="post-tag btn btn-outline-primary" href="/tags/strategy/">strategy</a> <a class="post-tag btn btn-outline-primary" href="/tags/swift5-0/">swift5.0</a> <a class="post-tag btn btn-outline-primary" href="/tags/swift5-1/">swift5.1</a></div></section></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><aside aria-label="Scroll to Top"> <button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow"> <i class="fas fa-angle-up"></i> </button></aside></div><div id="mask"></div><aside id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-animation="true" data-bs-autohide="false" ><div class="toast-header"> <button type="button" class="btn-close ms-auto" data-bs-dismiss="toast" aria-label="Close" ></button></div><div class="toast-body text-center pt-0"><p class="px-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></aside><script src="/assets/lib/simple-jekyll-search/simple-jekyll-search.min.js"></script> <script src="/assets/lib/loading-attribute-polyfill/loading-attribute-polyfill.umd.min.js"></script> <script src="/assets/lib/glightbox/glightbox.min.js"></script> <script src="/assets/lib/clipboard/clipboard.min.js"></script> <script src="/assets/lib/dayjs/dayjs.min.js"></script> <script src="/assets/lib/dayjs/locale/en.js"></script> <script src="/assets/lib/dayjs/plugin/relativeTime.js"></script> <script src="/assets/lib/dayjs/plugin/localizedFormat.js"></script> <script src="/assets/lib/tocbot/tocbot.min.js"></script> <script src="/assets/js/dist/post.min.js"></script> <script defer src="/app.min.js"></script> <script>SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<article class="px-1 px-sm-2 px-lg-4 px-xl-0"><header><h2><a href="{url}">{title}</a></h2><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div></header><p>{snippet}</p></article>', noResultsText: '<p class="mt-5">Oops! No results found.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script>
